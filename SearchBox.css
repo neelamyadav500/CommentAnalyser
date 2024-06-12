@@ -1,0 +1,16 @@
+.SearchBox{
+    margin-bottom: 20px;
+}
+input{
+    text-align: center;
+    border: 2px solid black;
+    height: 30px;
+    width: 300px;
+    font-size: 15px;
+    border-radius: 14px;
+}
+#btn{
+    margin-left: 5px;
+    background-color: black;
+    color: white;
+}

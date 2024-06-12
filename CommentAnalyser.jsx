@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ConclusionBox from "./ConclusionBox";
 import SearchBox from "./SearchBox";
 
-const API_KEY = 'AIzaSyCAzqviGkRc8fDxWyMpS_6vCXno56Br7_w';  // Replace 'YOUR_ACTUAL_API_KEY' with your actual API key
+const API_KEY = 'YOUR_ACTUAL_API_KEY'; // put you API key here
 
 function CommentAnalyzer() {
   const [comments, setComments] = useState([]);
@@ -24,7 +24,7 @@ function CommentAnalyzer() {
   const fetchComments = async (videoId) => {
     let allComments = [];
   
-    let nextPageToken = ''; // Initialize nextPageToken
+    let nextPageToken = '';
   
     do {
       const response = await fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${API_KEY}&maxResults=100&pageToken=${nextPageToken}`);
@@ -39,7 +39,7 @@ function CommentAnalyzer() {
         allComments = allComments.concat(comments);
       }
   
-      nextPageToken = data.nextPageToken; // Update nextPageToken for pagination
+      nextPageToken = data.nextPageToken; 
     } while (nextPageToken);
   
     return allComments;
